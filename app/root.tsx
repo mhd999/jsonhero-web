@@ -83,14 +83,14 @@ function App() {
   const [theme] = useTheme();
 
   return (
-    <html lang="en" className={clsx(theme)}>
+    <html lang="en" className={clsx(theme)} style={{ height: '100%' }}>
       <head>
         <Meta />
         <meta charSet="utf-8" />
         <Links />
         <NonFlashOfWrongThemeEls ssrTheme={Boolean(theme)} />
       </head>
-      <body className="overscroll-none">
+      <body className="overscroll-none" style={{ height: '100%' }}>
         <Outlet />
         <ScrollRestoration />
         <Scripts />

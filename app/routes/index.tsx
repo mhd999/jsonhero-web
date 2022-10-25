@@ -6,6 +6,8 @@ import { HomeHeroSection } from "~/components/Home/HomeHeroSection";
 import { HomeInfoBoxSection } from "~/components/Home/HomeInfoBoxSection";
 import { HomeSearchSection } from "~/components/Home/HomeSearchSection";
 import { HomeFooter } from "~/components/Home/HomeFooter";
+import { UrlForm } from "~/components/UrlForm";
+
 import {
   commitSession,
   getSession,
@@ -31,10 +33,10 @@ export async function loader({ request }: { request: Request }) {
 }
 export default function Index() {
   const { toastMessage } = useLoaderData<LoaderData>();
-
   return (
-    <div className="overflow-x-hidden">
-      {toastMessage && (
+    <div style={{ height: '100%' }}>
+      <UrlForm />
+      {/* {toastMessage && (
         <ToastPopover
           message={toastMessage.message}
           title={toastMessage.title}
@@ -51,7 +53,7 @@ export default function Index() {
       <HomeSearchSection />
       <HomeCollaborateSection />
       <HomeFeatureGridSection />
-      <HomeFooter />
+      <HomeFooter /> */}
     </div>
   );
 }
